@@ -1,0 +1,39 @@
+<app-header></app-header>
+
+<div class="home">
+    <h1>Flight Information Form</h1>
+    <form (ngSubmit)="submitForm()" class="form">
+      <div class="column">
+        <label for="airline">Airline:</label>
+        <input type="text" id="airline" name="airline" [(ngModel)]="flightInfo.airline" required>
+        
+        <label for="arrivalDate">Arrival Date:</label>
+        <input type="date" id="arrivalDate" name="arrivalDate" [(ngModel)]="flightInfo.arrivalDate" required>
+        
+        <label for="arrivalTime">Arrival Time:</label>
+        <input type="time" id="arrivalTime" name="arrivalTime" [(ngModel)]="flightInfo.arrivalTime" required>
+        <div class="subBtn">
+            <button type="submit">Submit</button>
+            
+        </div>
+        
+      </div>
+      <div class="column">
+        <label for="flightNumber">Flight Number:</label>
+        <input type="text" id="flightNumber" name="flightNumber" [(ngModel)]="flightInfo.flightNumber" required>
+        
+        <label for="numOfGuests">Number of Guests:</label>
+        <input type="number" id="numOfGuests" name="numOfGuests" [(ngModel)]="flightInfo.numOfGuests" required>
+        
+        <label for="comments">Comments:</label>
+        <textarea id="comments" name="comments" [(ngModel)]="flightInfo.comments"></textarea>
+      </div >
+      
+      
+    </form>
+    
+    <div class="response">
+      <h2>API Response</h2>
+      <pre>{{ apiResponse | json }}</pre>
+    </div>
+  </div>
